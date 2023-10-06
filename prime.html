@@ -5,43 +5,32 @@
 </head>
 <body>
     <h1>Prime Number Checker</h1>
-    <p>Enter a number below to check if it's prime:</p>
+    <p>Enter a number to check if it's prime:</p>
     <input type="number" id="numberInput">
-    <button onclick="checkPrime()">Check Prime</button>
+    <button onclick="checkPrime()">Check</button>
     <p id="result"></p>
 
     <script>
         function isPrime(number) {
-            if (number <= 1) {
-                return false;
-            }
-            if (number <= 3) {
-                return true;
-            }
-            if (number % 2 === 0 || number % 3 === 0) {
-                return false;
-            }
+            if (number <= 1) return false;
 
-            let i = 5;
-            while (i * i <= number) {
-                if (number % i === 0 || number % (i + 2) === 0) {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
                     return false;
                 }
-                i += 6;
             }
 
             return true;
         }
 
         function checkPrime() {
-            const numberToCheck = document.getElementById("numberInput").value;
-            const isPrimeResult = isPrime(Number(numberToCheck));
-            const resultElement = document.getElementById("result");
+            const numberInput = (document.getElementById('numberInput').value);
+            const resultElement = document.getElementById('result');
 
-            if (isPrimeResult) {
-                resultElement.textContent = `${numberToCheck} is prime.`;
+            if (isPrime(numberInput)) {
+                resultElement.textContent = `${numberInput} is a prime number.`;
             } else {
-                resultElement.textContent = `${numberToCheck} is not prime.`;
+                resultElement.textContent = `${numberInput} is not a prime number.`;
             }
         }
     </script>
