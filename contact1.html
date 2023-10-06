@@ -1,0 +1,88 @@
+<html>
+<head>
+<metaname="viewport"content="width=device-width, initial-scale=1">
+<style>
+*{
+  box-sizing: border-box;
+  background-color: yellowgreen;
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px20px12px40px;
+  border: 1pxsolid#d41a1a;
+  margin-bottom: 12px;
+  border-radius: 100px;
+  font:black;
+  background: #f1eaeb;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL,li,a {
+  border: 1pxsolid#2f1894;
+  margin-top: -1px; 
+  background-color: #141414;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgb(253, 249, 249);
+  display: block;
+  font-family: cursive;
+}
+#hell{
+  font-family: cursive;
+}
+#myUL,li,a:hover:not(.header) {
+  background-color: #f1eaeb;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<h2 id="hell"><center>My Phonebook</center></h2>
+<input type="text"id="myInput" onkeyup="myFunction()"placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Ansh</a></li>
+  <li><a href="#">Aisha</a></li>
+  <li><a href="#">Sabiha Maam</a></li>
+  <li><a href="#">Mary</a></li>
+  <li><a href="#">Kamplesh</a></li>
+  <li><a href="#">Jai</a></li>
+  <li><a href="#">Zaneta</a></li>
+</ul>
+
+<script>
+  function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput"); 
+      filter = input.value.toUpperCase(); 
+      ul = document.getElementById("myUL"); 
+      li = ul.getElementsByTagName("li"); 
+  
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0]; 
+          txtValue = a.textContent || a.innerText;
+  
+         
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  }
+  </script>
+  
+
+</body>
+</html>
