@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta name ="viewport"content="width=device-width",initial-scale="1">
+<style>
+body{
+    
+    background-color: rgb(245, 237, 237);
+}
+form{
+    border:3pxsolid#161414;
+}
+input[type=text], input[type=password]{
+width:100%;
+padding:12px20px;
+margin: 8px0;
+display: inline-block;
+border: 1pxsolid#ccc;
+box-sizing: border-box;
+}
+form{
+    border: 4px #161414;
+}
+button{
+background-color: #2db44f;
+color: white;
+padding: 14PX20PX;
+margin: 8PX0;
+border: none;
+cursor: pointer;
+width:100%;
+}
+button:hover{
+    background-color: rgb(15, 15, 15);
+opacity:0.8;
+}
+.cancelbtn{
+width: auto;
+padding: 10px18px;
+background-color: #4152b6;
+}
+.imgcontainer{
+text-align: center;
+margin: 24px012px0;
+border: radius 200px;;
+}
+img.avatar{
+}
+.container{
+padding: 16px;
+background-color:whitesmoke;
+}
+
+.psw{
+   ;
+
+}
+</style>
+</head>
+<body>
+    
+<h2 class="container"><center>Login Form</center></h2>
+<form action="/action_page.php" method="post">
+
+<div class="imgcontainer">
+<img src="fb.jpg" heigth="100px" width="100" alt="Avatar" class="avatar">
+</div>
+<div class="container">
+<label for="uname"><b>Username</b></label>
+<input type ="text"placeholder="Enter
+Username"name="uname"required>
+<labelfor="psw"><b>Password</b></label>
+<input type ="password"placeholder="Enter
+Password"name="psw"required><br><br>
+<button type="submit">Login</button>
+<label>
+<input type="checkbox"checked="checked"name="remember">
+Remember Me </label>
+</div>
+<div class="container">
+<button type="button" class="cancelbtn">Cancel</button>
+<span class="psw">Forgot<a href="#">password?</a></span>
+</div>
+</form>
+</body>
+</HTML>
