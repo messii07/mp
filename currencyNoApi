@@ -1,0 +1,41 @@
+currency no api
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <p>Enter an amount in US Dollars (USD) to convert to Euros (EUR) or British Pounds (GBP):</p>
+    <input type="number" id="usdInput">
+    <select id="currencySelect">
+        <option value="eur">Euros (EUR)</option>
+        <option value="gbp">British Pounds (GBP)</option>
+    </select>
+    <button onclick="convertCurrency()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convertCurrency() {
+            const usdAmount = parseFloat(document.getElementById('usdInput').value);
+            const currencySelect = document.getElementById('currencySelect');
+            const selectedCurrency = currencySelect.options[currencySelect.selectedIndex].value;
+            let convertedAmount;
+
+            switch (selectedCurrency) {
+                case 'eur':
+                    convertedAmount = usdAmount * 0.85; // 1 USD = 0.85 EUR
+                    break;
+                case 'gbp':
+                    convertedAmount = usdAmount * 0.74; // 1 USD = 0.74 GBP
+                    break;
+                default:
+                    convertedAmount = 'Invalid currency';
+            }
+
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `${usdAmount} USD is equal to ${convertedAmount.toFixed(2)} ${selectedCurrency.toUpperCase()}.`;
+        }
+    </script>
+</body>
+</html>
